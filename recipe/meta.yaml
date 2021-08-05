@@ -1,13 +1,13 @@
 {% set name = "jupyter-packaging" %}
-{% set version = "0.7.12" %}
+{% set version = "0.10.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b140325771881a7df7b7f2d14997b619063fe75ae756b9025852e4346000bbb8
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_packaging-{{ version }}.tar.gz
+  sha256: 589db027cb85a92612f9bcfaeecaa8a9072ac8a4bddaf827f648664258e587c4
 
 build:
   number: 0
@@ -16,15 +16,26 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
+    - setuptools >=46.4.0
+    - wheel
+    - packaging
   run:
-    - python >=3.5
-    - setuptools
+    - python >=3.6
+    - packaging
+    - tomlkit
+    - setuptools >=46.4.0
+    - wheel
+    - deprecation
 
 test:
   imports:
     - jupyter_packaging
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/jupyter/jupyter-packaging
@@ -36,6 +47,7 @@ about:
   description: |
     Jupyter Packaging Utilities
   dev_url: https://github.com/jupyter/jupyter-packaging
+  doc_url: https://github.com/jupyter/jupyter-packaging#readme
 
 extra:
   recipe-maintainers:
