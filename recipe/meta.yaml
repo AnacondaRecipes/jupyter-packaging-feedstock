@@ -23,7 +23,6 @@ requirements:
     - packaging
   run:
     - python >=3.6
-    - setuptools
     - packaging
     - tomlkit
     - setuptools >=46.4.0
