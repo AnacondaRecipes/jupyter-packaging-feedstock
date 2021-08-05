@@ -16,15 +16,27 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python >=3.6
     - pip
+    - setuptools >=46.4.0
+    - wheel
+    - packaging
   run:
-    - python >=3.5
+    - python >=3.6
     - setuptools
+    - packaging
+    - tomlkit
+    - setuptools >=46.4.0
+    - wheel
+    - deprecation
 
 test:
   imports:
     - jupyter_packaging
+  requires:
+    - pip
+  commands:
+    - pip check
 
 about:
   home: https://github.com/jupyter/jupyter-packaging
@@ -36,6 +48,7 @@ about:
   description: |
     Jupyter Packaging Utilities
   dev_url: https://github.com/jupyter/jupyter-packaging
+  doc_url: https://github.com/jupyter/jupyter-packaging#readme
 
 extra:
   recipe-maintainers:
