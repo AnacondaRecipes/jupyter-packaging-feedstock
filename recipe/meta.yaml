@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_packaging-{{ version }}.tar.gz
   sha256: 589db027cb85a92612f9bcfaeecaa8a9072ac8a4bddaf827f648664258e587c4
 
 build:
