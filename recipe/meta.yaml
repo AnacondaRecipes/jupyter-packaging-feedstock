@@ -1,5 +1,5 @@
 {% set name = "jupyter-packaging" %}
-{% set version = "0.10.4" %}
+{% set version = "0.11.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/jupyter_packaging-{{ version }}.tar.gz
-  sha256: 589db027cb85a92612f9bcfaeecaa8a9072ac8a4bddaf827f648664258e587c4
+  sha256: 6f5c7eeea98f7f3c8fb41d565a94bf59791768a93f93148b3c2dfb7ebade8eec
 
 build:
   number: 0
@@ -16,13 +16,13 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python
     - pip
     - setuptools >=46.4.0
     - wheel
     - packaging
   run:
-    - python >=3.6
+    - python >=3.7
     - packaging
     - tomlkit
     - setuptools >=46.4.0
