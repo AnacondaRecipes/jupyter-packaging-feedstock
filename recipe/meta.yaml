@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  noarch: python
+  skip: True  # [py<37]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,10 +22,10 @@ requirements:
     - wheel
     - packaging
   run:
-    - python >=3.7
+    - python
     - packaging
     - tomlkit
-    - setuptools >=46.4.0
+    - setuptools >=60.2.0
     - wheel
     - deprecation
 
